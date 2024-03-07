@@ -23,9 +23,11 @@ const Home = () => {
       const lastDay = new Date(
         curDate.getFullYear(),
         curDate.getMonth() + 1,
-        0
+        0,
+        23,
+        59,
+        59
       ).getTime();
-
       setCurMonthDiary(
         diaryList.filter((it) => firstDay <= it.date && it.date <= lastDay)
       );
@@ -50,7 +52,7 @@ const Home = () => {
         leftChild={<MyButton text={'<'} onClick={decreaseMonth} />}
         rightChild={<MyButton text={'>'} onClick={increaseMonth} />}
       />
-      <DiaryList diaryList={diaryList} />
+      <DiaryList diaryList={curMonthDiary} />
     </div>
   );
 };

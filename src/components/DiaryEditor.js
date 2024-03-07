@@ -38,7 +38,6 @@ const DiaryEditor = ({ isEdit, originData }) => {
         onEdit(originData.id, date, content, emotion);
       }
     }
-    alert('없는 일기입니다.');
     navigate('/', { replace: true });
   };
 
